@@ -74,7 +74,7 @@ const ItemJHA = props => {
             </div>
             <>
             <ul>
-                {props.jha.tasks.map(task=>{
+                {props.jha.tasks.map((task,i)=>{
                 const hazardsAndSafeguards = [];
                 const length = Math.max(task.hazards.length, task.safeguards.length);
                 for(let i = 0; i < length; i++){
@@ -86,7 +86,7 @@ const ItemJHA = props => {
                     );
                 }
                 return (
-                <li>
+                <li key={task.description+"-"+i}>
                     <h5>{task.description}</h5>
                     <table>
                         <tr>

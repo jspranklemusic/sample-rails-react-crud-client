@@ -286,7 +286,7 @@ const CreateJHA = props => {
                             selected={tasks[selectedTaskId].description} 
                             onClick={()=>setSelectedTaskId(i)} 
                             task={task.description}
-                            key={task.description}>
+                            key={task.description+"-"+i}>
                             {task.description}
                         </Li>))}
                     </ul>

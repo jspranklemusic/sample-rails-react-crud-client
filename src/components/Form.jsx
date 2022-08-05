@@ -52,4 +52,13 @@ export const Label = styled.label`
     flex: 25%;
 `
 
-export const TextInput = props => (<TextInputElement onKeyDown={e => e.key == "Enter" && props.enterPress()} {...props}/>);
+
+
+export const TextInput = props => {
+    const enterPress = e => {
+        if(e.key == "Enter" && !!props.enterPress){
+            props.enterPress()
+        }
+    }
+    return(<TextInputElement onKeyDown={e => enterPress(e)} {...props}/>)
+};

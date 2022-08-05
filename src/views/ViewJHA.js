@@ -97,6 +97,7 @@ const ViewJHA = ()=> {
                 <ItemJHA 
                     setExpanded={()=>jha.id == expandedId ? setExpandedId("") : setExpandedId(jha.id)} 
                     expanded={jha.id == expandedId} 
+                    key={jha.id}
                     shiftItem={()=>setJHA([...JHA.filter(item => item.id != jha.id)])}
                     jha={jha}/>))}
             </ul>

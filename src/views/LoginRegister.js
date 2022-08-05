@@ -70,6 +70,12 @@ const LoginForm = props => {
     }
 
     const register = async ()=>{
+        if(fields.password != fields.password_confirmation){
+            return dispatch(setAlertMessage({ alertMessage: "Passwords do not match." }))
+        }
+        if(fields.password.length < 8 || !/^(?=.*[0-8])(?=.*[A-Z]).*$/g.test(fields.password)){
+            return dispatch(setAlertMessage({ alertMessage: "Password be 8 or more characters, have an uppercase letter, and a number." }))
+        }
         const response = await fetch('http://localhost:3000/authors',{
             method: 'POST',
             headers: {
