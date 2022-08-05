@@ -1,5 +1,5 @@
 services:
-  client:
+  sample-rails-react-crud-client:
     container_name: sample-crud-client
     build:
       context: .
@@ -9,7 +9,7 @@ services:
       - '/app/node_modules'
     ports:
       - 8000:8000
-  server:
+  sample-rails-react-crud-server:
     container_name: sample-crud-server
     build:
       context: ../server
