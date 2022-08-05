@@ -1,44 +1,171 @@
 
 :root{
-  --color-main: red;
+  --color-black: rgb(50, 50, 50);
+  --color-greygreen: rgb(78, 86, 79);
   --color-background: green;
   --color-white: rgb(245, 245, 245);
   --color-main-light: rgb(213, 235, 222);
+  --lightgrey: rgb(220,220,220); 
+  --darkestgreen: rgb(99, 116, 106);
+  --darkergreen: rgb(99, 116, 106);
+  --darkgreen: rgb(108, 122, 114);
+  --mediumdarkgreen: rgb(119, 149, 131);
+  --mediumgreen: rgb(137, 170, 151);
 } 
+
+* {
+  position: relative;
+  box-sizing: border-box;
+}
 
 body, html {
   width: 100vw;
   height: 100vh;
   padding: 0;
   margin: 0;
+  color: var(--color-greygreen);
   background: radial-gradient( 
     rgb(75, 108, 88),
     rgb(29, 68, 44)
   );
 }
 
-.app {
-
-}
-
 .app-header {
-  color: var(--color-white);
-  font-size: 2.5rem;
+  font-size: 1rem;
   text-align: center;
+  color: var(--mediumgreen);
 }
 
 .app-header h1 {
-  margin: 1rem;
+  color: var(--color-white);
+  margin: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
-.app-header p {
+
+.large-message {
   color: var(--color-main-light);
   padding: 0;
-  margin: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  display: block;
+  margin: 2rem auto;
 }
 
-* {
-  position: relative;
-  box-sizing: border-box;
+.large-message.wrapped {
+  background: var(--color-white);
+  padding: 2rem;
+  padding-top: 1rem;
+  border-radius: 10px;
+  color: var(--color-greygreen);
+  font-size: 1rem;
+  max-width: 650px;
+  animation: fadein 0.5s backwards;
 }
+
+.app-header a {
+  color: var(--color-main-light);
+  font-size: 1rem;
+  opacity: 0.8;
+  text-decoration-color: var(--color-main-light);
+}
+
+
+
+.app-header a:hover {
+  text-decoration-color: var(--mediumgreen);
+  color: var(--mediumgreen);
+}
+
+h1 {
+  text-align: center;
+}
+
+a, .link-style {
+  color: var(--color-greygreen);
+  text-decoration: underline dotted var(--color-greygreen);
+  cursor: pointer;
+}
+
+a:hover, .link-style:hover {
+  color: black;
+}
+
+table, th, td {
+  border: 1px solid silver;
+  border-collapse: collapse;
+  padding: 5px;
+  font-size: .85rem;
+}
+
+th {
+  background-color: rgb(213, 101, 53);
+  color: white;
+}
+
+th.green {
+  background-color: rgb(94, 146, 94);
+}
+
+table {
+  width: 100%;
+  table-layout: fixed
+}
+
+/* ANIMATIONS */
+
+@keyframes slidedown-centered {
+  0% {
+    transform: translateX(-50%) translateY(-2rem);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0rem);
+  }
+}
+
+@keyframes fadeout {
+  0%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout-slide-transform-centerX {
+  0%{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -35%);
+  }
+}
+
+@keyframes fadein-slide-transform-centerX {
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -65%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
