@@ -1,6 +1,6 @@
 services:
-  sample-rails-react-crud-client:
-    container_name: sample-crud-client
+  client:
+    container_name: sample-client
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,10 +9,10 @@ services:
       - '/app/node_modules'
     ports:
       - 8000:8000
-  sample-rails-react-crud-server:
-    container_name: sample-crud-server
+  server:
+    container_name: sample-server
     build:
-      context: ../server
+      context: ../sample-rails-react-crud-server
       dockerfile: Dockerfile
     ports:
       - 3000:3000

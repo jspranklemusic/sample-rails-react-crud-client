@@ -1,4 +1,4 @@
-FROM node:14.17.3 AS sample-crud-client
+FROM node:14.17.3 
 
 EXPOSE 8000
 
